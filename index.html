@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- profile:meta:start -->
+  <meta name="description" content="Sunrikis 的个人主页，记录图像复原研究、算法学习，以及游戏、音乐与动漫等日常兴趣。">
+  <!-- profile:meta:end -->
+  <meta name="theme-color" content="#f5f4ea">
+  <title>Sunrikis · 无意识庭院</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css?v=garden-20261124-v2">
+  <script>
+    try {
+      const theme = localStorage.getItem("theme");
+      if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch {}
+  </script>
+  <script src="js/script.js?v=garden-20261124-v2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="site-header" id="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#home">
+        <img src="assets/favicon.svg" alt="" width="40" height="40">
+        <span>Sunrikis<small>无意识庭院</small></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#publications" data-nav="publications">研究</a>
+        <a href="#interests" data-nav="interests">兴趣</a>
+        <a href="#skills" data-nav="skills">札记</a>
+        <a href="#about" data-nav="about">关于</a>
+      </nav>
+      <div class="header-tools">
+        <button id="reading-toggle" type="button" aria-pressed="false" hidden>专注阅读</button>
+        <button id="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false" hidden>
+          <span class="theme-symbol" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <span class="scroll-progress" id="scroll-progress" aria-hidden="true"></span>
+  </header>
+
+  <main id="main" class="shell" tabindex="-1">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="hero-intro"><span class="intro-spark" aria-hidden="true">✦</span> 你好，我是 Sunrikis</p>
+        <h1 id="hero-title">把模糊的世界<br>看清一点<span>。</span></h1>
+        <p class="hero-description">我关注计算机视觉与图像复原，<br class="desktop-break">也在这里收藏游戏、音乐、动漫与日常灵感。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#publications">
+            <span>看我的研究</span>
+            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 4l8 8m0 0V6m0 6H6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="text-link hero-secondary" href="#interests">
+            <span>看看兴趣</span>
+            <svg class="btn-arrow" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 3.5v9m0 0l3.75-3.75M8 12.5L4.25 8.75" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/koishi-garden-v2.png" alt="古明地恋戴着缀有黄缎带的黑帽，站在洒满阳光的银杏庭院里" width="1536" height="1024" fetchpriority="high">
+        <div class="hero-petals" aria-hidden="true">
+          <svg class="petal petal-1" viewBox="0 0 32 32"><path d="M16 28c-.6-4.5-.6-7.5 0-11C9 15 4.5 11.5 5 7c4.5-1.5 8 1.5 11 4.8C19 8.5 22.5 5.5 27 7c.5 4.5-4 8-11 10 .6 3.5.6 6.5 0 11Z" fill="currentColor"/></svg>
+          <svg class="petal petal-2" viewBox="0 0 32 32"><path d="M16 28c-.6-4.5-.6-7.5 0-11C9 15 4.5 11.5 5 7c4.5-1.5 8 1.5 11 4.8C19 8.5 22.5 5.5 27 7c.5 4.5-4 8-11 10 .6 3.5.6 6.5 0 11Z" fill="currentColor"/></svg>
+          <svg class="petal petal-3" viewBox="0 0 32 32"><path d="M16 28c-.6-4.5-.6-7.5 0-11C9 15 4.5 11.5 5 7c4.5-1.5 8 1.5 11 4.8C19 8.5 22.5 5.5 27 7c.5 4.5-4 8-11 10 .6 3.5.6 6.5 0 11Z" fill="currentColor"/></svg>
+          <svg class="petal petal-4" viewBox="0 0 32 32"><path d="M16 28c-.6-4.5-.6-7.5 0-11C9 15 4.5 11.5 5 7c4.5-1.5 8 1.5 11 4.8C19 8.5 22.5 5.5 27 7c.5 4.5-4 8-11 10 .6 3.5.6 6.5 0 11Z" fill="currentColor"/></svg>
+          <svg class="petal petal-5" viewBox="0 0 32 32"><path d="M16 28c-.6-4.5-.6-7.5 0-11C9 15 4.5 11.5 5 7c4.5-1.5 8 1.5 11 4.8C19 8.5 22.5 5.5 27 7c.5 4.5-4 8-11 10 .6 3.5.6 6.5 0 11Z" fill="currentColor"/></svg>
+        </div>
+        <figcaption><span class="caption-spark" aria-hidden="true">✧</span> 古明地恋 · 同人插画</figcaption>
+      </figure>
+    </section>
+
+    <section id="publications" class="page-section" aria-labelledby="research-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label" lang="en">Research</p>
+          <h2 id="research-title">研究与论文</h2>
+        </div>
+        <a class="text-link overview-link" href="cv.html">
+          <span>可打印概览</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4.5 11.5l7-7m0 0H5.5m6 0v6" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <!-- profile:publications:start -->
+      <div class="publication-stage">
+        <img class="chibi-peeker" src="assets/koishi-chibi-peeker.webp" alt="Q版古明地恋趴在卡片边缘眨眼微笑" width="640" height="545" loading="lazy">
+        <article class="publication">
+          <div class="paper-date">
+            <time class="paper-year" datetime="2026">2026</time>
+            <span class="paper-venue">ICIG</span>
+          </div>
+          <div class="paper-copy">
+            <p class="paper-status">已录用</p>
+            <h3 lang="en">All-in-One Adverse Weather Removal via a Unified Latent Conditional Diffusion Model</h3>
+          </div>
+        </article>
+      </div>
+      <!-- profile:publications:end -->
+
+      <div class="vision">
+        <div class="vision-copy">
+          <div class="vision-eyebrow-row">
+            <p class="vision-kicker" lang="en">Visual Degradation</p>
+            <img class="vision-prop" src="assets/prop-optical-lens.webp" alt="" width="460" height="406" loading="lazy">
+          </div>
+          <h3>模糊与天气带走了什么？</h3>
+          <p>远处钟楼的边缘、花房窗框的轮廓，还有枝梢细碎的银杏纹理。无论散焦、雾霭还是雨雪，图像复原关心的都是如何从退化画面里找回这些细节。</p>
+          <div class="vision-controls">
+            <div class="degrade-modes" id="degrade-modes" role="group" aria-label="切换图像退化模拟模式" hidden>
+              <button type="button" data-mode="blur" aria-pressed="true">散焦模糊</button>
+              <button type="button" data-mode="haze" aria-pressed="false">雾霭漫射</button>
+              <button type="button" data-mode="rain" aria-pressed="false">雨丝斜落</button>
+              <button type="button" data-mode="snow" aria-pressed="false">飞雪飘零</button>
+            </div>
+            <div class="scene-modes" id="scene-modes" role="group" aria-label="切换对比插画场景" hidden>
+              <button type="button" data-scene="koishi" aria-pressed="true">恋恋花房</button>
+              <button type="button" data-scene="study" aria-pressed="false">樱花书窗</button>
+            </div>
+          </div>
+          <p id="compare-instructions" hidden>拖动分界线，或用方向键，比较退化示意和原始插画。</p>
+        </div>
+        <figure class="demo">
+          <div class="comparison" data-mode="blur">
+            <img id="compare-sharp-img" src="assets/koishi-impasto-window.webp" alt="厚涂油画风格的古明地恋倚在雨后放晴的玻璃花房窗边，远方可见钟楼、湖面与金色银杏叶" width="1536" height="1024" loading="lazy">
+            <div class="comparison-blur" aria-hidden="true">
+              <img id="compare-blur-img" src="assets/koishi-impasto-window.webp" alt="" width="1536" height="1024" loading="lazy">
+              <div class="fx-haze"></div>
+              <svg class="fx-rain" viewBox="0 0 960 540" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="rain-drop" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#eaf2ff" stop-opacity="0"/>
+                    <stop offset="55%" stop-color="#f3f8ff" stop-opacity=".75"/>
+                    <stop offset="100%" stop-color="#ffffff" stop-opacity=".1"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#rain-drop)" stroke-linecap="round">
+                  <g stroke-width="1.6" opacity=".78">
+                    <line x1="78" y1="-20" x2="26" y2="130"/><line x1="158" y1="30" x2="104" y2="195"/>
+                    <line x1="242" y1="-10" x2="184" y2="160"/><line x1="336" y1="50" x2="278" y2="220"/>
+                    <line x1="422" y1="-30" x2="365" y2="145"/><line x1="518" y1="22" x2="460" y2="190"/>
+                    <line x1="612" y1="-15" x2="554" y2="165"/><line x1="704" y1="40" x2="646" y2="215"/>
+                    <line x1="802" y1="-20" x2="742" y2="155"/><line x1="896" y1="32" x2="838" y2="205"/>
+                    <line x1="112" y1="210" x2="54" y2="380"/><line x1="204" y1="255" x2="144" y2="430"/>
+                    <line x1="298" y1="190" x2="240" y2="365"/><line x1="392" y1="270" x2="334" y2="445"/>
+                    <line x1="486" y1="220" x2="428" y2="395"/><line x1="582" y1="265" x2="524" y2="440"/>
+                    <line x1="674" y1="205" x2="616" y2="380"/><line x1="766" y1="260" x2="708" y2="435"/>
+                    <line x1="862" y1="215" x2="804" y2="390"/><line x1="944" y1="280" x2="886" y2="455"/>
+                    <line x1="64" y1="390" x2="12" y2="540"/><line x1="172" y1="415" x2="120" y2="565"/>
+                    <line x1="268" y1="380" x2="216" y2="535"/><line x1="364" y1="420" x2="312" y2="570"/>
+                    <line x1="458" y1="395" x2="406" y2="545"/><line x1="554" y1="425" x2="502" y2="575"/>
+                    <line x1="648" y1="388" x2="596" y2="540"/><line x1="742" y1="418" x2="690" y2="568"/>
+                    <line x1="838" y1="392" x2="786" y2="545"/><line x1="924" y1="430" x2="872" y2="580"/>
+                  </g>
+                  <g stroke-width="1" opacity=".48">
+                    <line x1="42" y1="60" x2="4" y2="175"/><line x1="126" y1="115" x2="88" y2="230"/>
+                    <line x1="210" y1="78" x2="172" y2="192"/><line x1="288" y1="130" x2="250" y2="245"/>
+                    <line x1="378" y1="88" x2="340" y2="202"/><line x1="468" y1="142" x2="430" y2="258"/>
+                    <line x1="558" y1="96" x2="520" y2="212"/><line x1="646" y1="145" x2="608" y2="262"/>
+                    <line x1="740" y1="92" x2="702" y2="208"/><line x1="832" y1="138" x2="794" y2="252"/>
+                    <line x1="918" y1="85" x2="880" y2="200"/><line x1="152" y1="322" x2="114" y2="438"/>
+                    <line x1="246" y1="348" x2="208" y2="462"/><line x1="342" y1="316" x2="304" y2="432"/>
+                    <line x1="436" y1="354" x2="398" y2="470"/><line x1="530" y1="324" x2="492" y2="440"/>
+                    <line x1="624" y1="352" x2="586" y2="468"/><line x1="718" y1="318" x2="680" y2="434"/>
+                    <line x1="812" y1="350" x2="774" y2="466"/><line x1="902" y1="326" x2="864" y2="442"/>
+                  </g>
+                </g>
+              </svg>
+              <svg class="fx-snow" viewBox="0 0 960 540" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <radialGradient id="flake-soft">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+                    <stop offset="45%" stop-color="#f4f8ff" stop-opacity=".6"/>
+                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <g fill="url(#flake-soft)">
+                  <circle cx="84" cy="76" r="14"/><circle cx="218" cy="142" r="18"/><circle cx="386" cy="88" r="15"/>
+                  <circle cx="534" cy="166" r="20"/><circle cx="692" cy="96" r="14"/><circle cx="842" cy="154" r="17"/>
+                  <circle cx="146" cy="296" r="19"/><circle cx="312" cy="252" r="13"/><circle cx="462" cy="322" r="16"/>
+                  <circle cx="624" cy="276" r="19"/><circle cx="776" cy="312" r="15"/><circle cx="904" cy="268" r="13"/>
+                  <circle cx="96" cy="442" r="16"/><circle cx="258" cy="412" r="14"/><circle cx="418" cy="466" r="18"/>
+                  <circle cx="578" cy="428" r="15"/><circle cx="734" cy="458" r="17"/><circle cx="868" cy="416" r="14"/>
+                </g>
+                <g fill="#ffffff" opacity=".88">
+                  <circle cx="48" cy="42" r="3.2"/><circle cx="128" cy="112" r="4.2"/><circle cx="174" cy="54" r="2.6"/>
+                  <circle cx="264" cy="94" r="3.8"/><circle cx="322" cy="168" r="4.5"/><circle cx="432" cy="52" r="3"/>
+                  <circle cx="488" cy="126" r="4"/><circle cx="584" cy="76" r="3.4"/><circle cx="642" cy="148" r="4.6"/>
+                  <circle cx="748" cy="64" r="3.2"/><circle cx="804" cy="118" r="4.1"/><circle cx="892" cy="72" r="3.5"/>
+                  <circle cx="68" cy="214" r="4"/><circle cx="182" cy="238" r="3"/><circle cx="244" cy="312" r="4.4"/>
+                  <circle cx="358" cy="204" r="3.6"/><circle cx="412" cy="278" r="4.2"/><circle cx="518" cy="232" r="3.1"/>
+                  <circle cx="566" cy="318" r="4.5"/><circle cx="668" cy="218" r="3.6"/><circle cx="722" cy="286" r="4.2"/>
+                  <circle cx="826" cy="234" r="3.4"/><circle cx="888" cy="324" r="4.4"/><circle cx="126" cy="378" r="3.8"/>
+                  <circle cx="198" cy="468" r="4.2"/><circle cx="316" cy="364" r="3.2"/><circle cx="364" cy="494" r="4"/>
+                  <circle cx="482" cy="396" r="4.4"/><circle cx="534" cy="488" r="3.3"/><circle cx="646" cy="374" r="4.1"/>
+                  <circle cx="696" cy="492" r="3.6"/><circle cx="808" cy="382" r="4.3"/><circle cx="916" cy="464" r="3.5"/>
+                </g>
+              </svg>
+            </div>
+            <span class="comparison-line" aria-hidden="true"></span>
+            <span class="comparison-handle" aria-hidden="true" hidden>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.25 6L3.5 10l3.75 4M12.75 6l3.75 4-3.75 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="comparison-label before" aria-hidden="true">模拟模糊</span>
+            <span class="comparison-label after" aria-hidden="true">原始插画</span>
+            <input id="compare" type="range" min="0" max="100" value="50" aria-label="图像对比分界线" aria-describedby="compare-instructions" hidden>
+          </div>
+          <figcaption id="compare-caption">图像退化示意，左侧通过滤镜模拟散焦模糊。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="interests" class="page-section" aria-labelledby="interests-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label" lang="en">Interests</p>
+          <h2 id="interests-title">兴趣与日常</h2>
+        </div>
+        <p class="section-note">研究之外的灵感与收藏</p>
+      </div>
+      <!-- profile:interests:start -->
+      <div class="interest-grid">
+        <article class="interest-card">
+          <div class="interest-head">
+            <p class="interest-category">游戏</p>
+            <div class="interest-art is-pixel" data-pixel-hop="true">
+              <img src="assets/koishi-pixel-walk.webp" alt="像素风格的古明地恋披着鼠尾草绿短斗篷，提着暖灯轻快漫步" width="405" height="560" loading="lazy">
+            </div>
+          </div>
+          <h3>像素与弹幕之间</h3>
+          <p>喜欢东方 Project 的角色设定与世界观，也偏爱美术精致、节奏舒缓的独立游戏。写完代码后，偶尔会在像素灯光与探索地图里放空一会儿。</p>
+          <ul class="interest-tags" aria-label="游戏关键词">
+            <li>东方 Project</li>
+            <li>独立游戏</li>
+            <li>像素美学</li>
+          </ul>
+        </article>
+        <article class="interest-card">
+          <div class="interest-head">
+            <p class="interest-category">音乐</p>
+            <div class="interest-art">
+              <img src="assets/prop-third-eye-locket.webp" alt="闭合第三只眼造型的复古珐琅挂坠与心形丝绳" width="460" height="454" loading="lazy">
+            </div>
+          </div>
+          <h3>写代码时的背景音轨</h3>
+          <p>常听东方同人编曲、游戏原声带与轻快的器乐纯音乐。读论文或调模型时，一段熟悉而安静的旋律总能把节奏稳下来。</p>
+          <ul class="interest-tags" aria-label="音乐关键词">
+            <li>东方同人曲</li>
+            <li>游戏 OST</li>
+            <li>器乐纯音乐</li>
+          </ul>
+        </article>
+        <article class="interest-card">
+          <div class="interest-head">
+            <p class="interest-category">动漫</p>
+            <div class="interest-art">
+              <img src="assets/prop-koishi-hat.webp" alt="缀着鹅黄蝴蝶结缎带与银杏叶的黑色宽檐帽" width="460" height="366" loading="lazy">
+            </div>
+          </div>
+          <h3>留住心动的作画与光影</h3>
+          <p>偏爱轻松治愈的日常番、细腻的光影分镜与有想象力的美术风格，也会随手收藏让人眼前一亮的色彩搭配和同人插画。</p>
+          <ul class="interest-tags" aria-label="动漫关键词">
+            <li>日常治愈</li>
+            <li>光影分镜</li>
+            <li>同人插画</li>
+          </ul>
+        </article>
+      </div>
+      <!-- profile:interests:end -->
+    </section>
+
+    <section id="skills" class="page-section" aria-labelledby="notes-title">
+      <div class="section-heading">
+        <div class="heading-with-prop">
+          <div>
+            <p class="section-label" lang="en">Notebook</p>
+            <h2 id="notes-title">学习札记</h2>
+          </div>
+          <img class="heading-prop" src="assets/prop-garden-notebook.webp" alt="" width="460" height="411" loading="lazy">
+        </div>
+      </div>
+      <!-- profile:notes:start -->
+      <div class="note-grid">
+        <article class="note">
+          <p class="note-category">代码与实验</p>
+          <h3>从思路到实现</h3>
+          <p>把算法拆成可以验证的小问题。读开源实现，也记录实验条件和观察到的现象。</p>
+        </article>
+        <article class="note">
+          <p class="note-category">学术阅读</p>
+          <h3>读懂方法的取舍</h3>
+          <p>留意空间与频率表示各自保留了什么，也关注生成模型的质量与推理开销。</p>
+        </article>
+        <article class="note">
+          <p class="note-category">日常积累</p>
+          <h3>慢慢攒一页</h3>
+          <p>记下语言学习中的新表达、读到的有趣问题，以及二次元作品里值得回看的细节。</p>
+        </article>
+      </div>
+      <!-- profile:notes:end -->
+    </section>
+
+    <section id="about" class="page-section about" aria-labelledby="about-title">
+      <svg class="about-ornament" viewBox="0 0 360 220" fill="none" aria-hidden="true">
+        <path d="M-20 185C45 140 92 175 135 128c32-36 16-84-20-82-32 2-38 42-10 66 44 37 128 16 195-56" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+        <path d="M168 158c3-18 8-30 16-42-22-14-34-31-28-47 16-4 28 8 36 22 12-10 27-19 42-11-2 17-18 28-44 33-4 14-8 27-12 45Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/>
+        <path d="M242 186c2-11 5-19 10-27-14-9-22-20-18-30 10-3 18 5 23 14 8-6 17-12 27-7-1 11-11 18-28 21-3 9-5 17-8 29Z" stroke="currentColor" stroke-width="1.15" stroke-linejoin="round" opacity=".75"/>
+      </svg>
+      <div class="about-title">
+        <p class="section-label" lang="en">About</p>
+        <h2 id="about-title">庭院的主人</h2>
+        <p class="about-motto" aria-hidden="true"><span>✦</span> 银杏、光斑与清晰的轮廓</p>
+        <img class="about-seal" src="assets/koishi-exlibris-stamp.webp" alt="复古藏书票风格的古明地恋与光学棱镜印章" width="560" height="559" loading="lazy">
+      </div>
+      <!-- profile:about:start -->
+      <div class="about-copy">
+        <p>我是 Sunrikis。我喜欢追问一张图像为什么会变模糊，以及边缘和纹理是怎样重新变得清晰的。这里是我整理视觉研究与算法思路的地方。</p>
+        <p>无意识庭院借用了古明地恋的意象。研究之外，游戏、音乐、动漫、语言学习和偶然遇到的灵感，也都可以在这里留一页。</p>
+      </div>
+      <!-- profile:about:end -->
+      <figure class="about-figure">
+        <img src="assets/koishi-watercolor-sketch.webp" alt="淡彩水彩手绘风格的古明地恋戴着银杏草帽，怀抱素描本微笑" width="397" height="840" loading="lazy">
+      </figure>
+    </section>
+  </main>
+
+  <footer id="contact" class="shell site-footer">
+    <span class="footer-brand"><span class="footer-spark" aria-hidden="true">✦</span> © <span id="year">2026</span> Sunrikis · 无意识庭院</span>
+    <a class="text-link back-top" href="#home">
+      <span>回到页首</span>
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 12.5v-9m0 0L4.25 7.25M8 3.5l3.75 3.75" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </footer>
+</body>
+</html>
